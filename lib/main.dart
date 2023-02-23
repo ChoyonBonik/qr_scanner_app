@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:qr_scanner_app/screens/home_screen.dart';
-
+import 'package:qr_scanner_app/screens/home_page.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeScreen(),
-    );
+    return HomePage();
   }
 }
