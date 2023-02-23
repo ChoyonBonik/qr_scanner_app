@@ -19,39 +19,53 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: QrImage(
-              data: data,
-              backgroundColor: Colors.white,
-              size: 300.0,
-              version: QrVersions.auto,
+          Expanded(
+            flex: 20,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: QrImage(
+                    data: data,
+                    backgroundColor: Colors.white,
+                    size: 300.0,
+                    version: QrVersions.auto,
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  width: 300.0,
+                  child: TextField(
+                    onChanged: (value){
+                      setState(() {
+                        data = value;
+                      });
+                    },
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                    decoration: InputDecoration(
+                      hintText: "Type the Data",
+                      filled: true,
+                      fillColor: AppStyle.textInputColor,
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-          SizedBox(
-            height: 25,
-          ),
-          Container(
-            width: 300.0,
-            child: TextField(
-              onChanged: (value){
-                setState(() {
-                  data = value;
-                });
-              },
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              decoration: InputDecoration(
-                hintText: "Type the Data",
-                filled: true,
-                fillColor: AppStyle.textInputColor,
-                border: InputBorder.none,
-              ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              child: Center(child: Text('https://github.com/ChoyonBonik', style: TextStyle(
+                color: Colors.white60,
+              ),)),
             ),
-          ),
-          SizedBox(
-            height: 25.0,
           ),
         ],
       ),
