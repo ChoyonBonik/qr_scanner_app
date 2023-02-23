@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Container(
               width: double.infinity,
-              child: Center(child: Text('https://github.com/ChoyonBonik', style: TextStyle(
+              child: Center(child: Text('@ https://github.com/ChoyonBonik', style: TextStyle(
                 color: Colors.white60,
               ),)),
             ),
